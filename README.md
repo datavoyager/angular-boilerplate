@@ -17,7 +17,7 @@ git clone hhttps://github.com/datavoyager/angular-boilerplate
 npm install
 ```
 ## Usage
-Start a lite server for automatic refreshing when changes are made to your source code 
+Start a lite server for automatic refreshing when changes are made to your source code. The site can then be viewed at http://localhost:8000.
 ```
 npm start
 ```
