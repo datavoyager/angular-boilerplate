@@ -1,5 +1,51 @@
 <div>
   <header>
-    <h1>{{title}}</h1>
+    <h1>
+      <!-- Interpolation of property -->
+      {{title}}
+    </h1>
   </header>
+  
+  <main>
+    <h2>
+      <!-- Interpolation of value returned by a function, passed hrough a pipe -->
+      {{getContentsHeader() | uppercase}}
+    </h2>
+    
+    <div>
+      <h3>Structural directives</h3>
+      <!-- Structural directive followed by interpolation -->
+      <ul>
+        <li *ngFor="let component of components" (click)="selectedComponent=$event.target.innerHTML">
+           <span>{{component}}</span>
+        </li>
+      </ul>
+    </div>
+    
+    <div>
+      <h3>Property binding</h3>
+      <p>One-way from data source to view target</p>
+      <!-- Binding result of expression to event -->
+      <input type="submit" [value]="boundInputValue" />
+      <br /><br />
+      <input type="submit" class="btn" value="Component class" />
+      <br /><br />
+      <input type="submit" class="btn" [class.mySubmitButton]="useCustomSubmitButton()" value="Class binding" />
+      <br /><br />
+      <input type="submit" class="btn" [style.color]="'red'" value="Style binding" />
+      <br /><br />
+      <input type="submit" class="btn" [attr.aria-label]="help()" value="Attribute binding" />
+          
+      <h3>Event binding</h3>
+      <p>One-way from view target to data source</p>
+      <!-- Binding result of expression to html property -->
+      <input (keyup)="boundInputValue=$event.target.value" [value]="boundInputValue"  />
+        
+      <h3>Two way binding</h3>
+      <!-- Two way binding -->
+      <h4>{{twoWayBinding ? twoWayBinding : 'Please enter a value:'}}</h4>
+      <input [(ngModel)]="twoWayBinding" />
+       
+    </div>
+  </main>
 </div>

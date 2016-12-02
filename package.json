@@ -1,10 +1,11 @@
 {
   "name": "angular2-boilerplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "@angular/common": "~2.2.0",
     "@angular/compiler": "~2.2.0",
     "@angular/core": "~2.2.0",
+    "@angular/forms": "~2.2.0",
     "@angular/platform-browser": "~2.2.0",
     "@angular/platform-browser-dynamic": "~2.2.0",
     "core-js": "^2.4.1",
